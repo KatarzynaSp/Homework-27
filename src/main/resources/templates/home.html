@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl-PL" xmlns:th="http.///www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<form method="post" th:action="@{/}" th:object="${film}">
+    <h3>Dodaj film</h3>
+    Tytuł filmu<input type="text" name="title" th:field="*{title}" placeholder="tytuł"><br/>
+    Data premiery<input type="date" name="premiereDate" th:field="*{premiereDate}" placeholder="data"><br/>
+    Opis filmu<textarea rows="10" name="description" th:field="*{description}"
+                        placeholder="opis">opis filmu</textarea><br/>
+    Kategoria<select th:field="*{category}" placeholder="kategoria"><br/>
+    <option selected value="">wybierz</option>
+    <option value="DRAMAT">Dramat</option>
+    <option value="ROMANCE">Romans</option>
+</select>
+    <input type="submit" placeholder="zapisz"><br/><br/>
+
+    <a href="/lista"> Wyświetl listę</a><br/>
+
+    <a href="/category" option value="DRAMAT">Dramat</option></a>
+    <a href="/category"  option value="ROMANCE">Romans</option>
+</select></a><br/>
+</form>
+
+</body>
+</html>

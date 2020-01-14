@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pl-PL" xmlns:th="http.///www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3>Lista filmów:</h3>
+<a th:href="@{'/category?category=' + ${film.category}}"
+   th:each="category: ${categoryList}">
+    <ul>
+        <li th:text="|${film.title} - ${film.category} |">
+        </li>
+    </ul>
+</a>
+</body>
+</html>
